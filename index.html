@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS05</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: bisque;
+        }
+        #btn1, #btna, #btnb{
+            width: 170px;
+        }
+        hr{
+            width: 500px;
+        }
+        h1{
+            color: brown;
+        }
+        button{
+            background-color: cornflowerblue;
+            color: white;
+        }
+        button, input {
+            height: 25px;
+            border-radius: 8px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task 1</h1>
+    <h2>Sadə Balans Sistemi</h2>
+    <h3 id="balans">Balans: 500 AZN</h3>
+    <input id="a" type="number"  placeholder="Məbləğ"/>
+    <br />
+    <br />
+    <button onclick="artir()" id="btna">+ Pul artır</button>
+    <br />
+    <br />
+    <button onclick="cixar()" id="btnb">- Pul çıxar</button>
+    <p id="msj"></p>
+
+    <hr />
+
+    <h1>Task 2</h1>
+    <h2>Anbar Məhsul Yoxlama</h2>
+    <input id="a1" type="number" />
+    <br />
+    <br />
+    <button id="btn1" type="button" onclick="yoxla1()">Yoxla</button>
+    <p id="msj1"></p>
+
+
+    <script>
+        // Task 1 JS
+        let a = document.getElementById('a')
+        let btna = document.getElementById('btna')
+        let btnb = document.getElementById('btnb')
+        let msj = document.getElementById('msj')
+        let balans = document.getElementById('balans')
+        
+        let x = 500
+
+
+        function artir(){
+            balans.innerHTML = `Balans: ${x += 100} AZN`
+        }
+
+        function cixar(){
+            if(a.value <= x && a.value > 0){
+                msj.innerHTML = `Pul çıxarıldı.`
+                balans.innerHTML = `Balans: ${x -= a.value} AZN`
+            }else{
+                msj.innerHTML = `Kifayət qədər məbləğ yoxdur.`
+            }
+        }
+
+        
+    
+
+        // Task 2 JS
+        let a1 = document.getElementById('a1')
+        let msj1 = document.getElementById('msj1')
+
+        function yoxla1(){
+            if(a1.value == 1){
+                msj1.innerHTML = `Bu ID-li məhsul var: Laptop`
+            }else if(a1.value == 2){
+                msj1.innerHTML = `Bu ID-li məhsul var: Telefon`
+            }else if(a1.value == 3){
+                msj1.innerHTML = `Bu ID-li məhsul var: Qulaqlıq`
+            }else if(a1.value == 4){
+                msj1.innerHTML = `Bu ID-li məhsul var: Klaviatura`
+            }else{
+                msj1.innerHTML = `Belə məhsul yoxdur.`
+            }
+        }
+    </script>
+</body>
+</html>
